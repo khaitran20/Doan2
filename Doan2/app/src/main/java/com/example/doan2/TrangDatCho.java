@@ -81,7 +81,7 @@ public class TrangDatCho extends AppCompatActivity {
                 .build();
 
         Ketnoi = new Retrofit.Builder()
-                .baseUrl("https://baigiuxe.elementfx.com/")
+                .baseUrl("https://doan2-qhh0.onrender.com/")
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()

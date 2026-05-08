@@ -11,7 +11,7 @@ public class RetrofitClient {
     public static ketnoi getApi() {
         if (retrofit == null) {
             retrofit = new Retrofit.Builder()
-                    .baseUrl("https://baigiuxe.elementfx.com/")
+                    .baseUrl("https://doan2-qhh0.onrender.com/")
                     .addConverterFactory(ScalarsConverterFactory.create())
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();

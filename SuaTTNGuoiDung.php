@@ -2,7 +2,6 @@
 header('Content-Type: application/json; charset=utf-8');
 include "ketnoi.php";
 
-$conn = mysqli_connect($host, $user, $pass, $db);
 mysqli_set_charset($conn, 'utf8');
 
 // Nhận dữ liệu

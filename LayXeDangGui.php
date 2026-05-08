@@ -3,7 +3,7 @@ header('Content-Type: application/json; charset=utf-8');
 include "ketnoi.php";
 
 
-$conn = mysqli_connect($host, $user, $pass, $db);
+
 $conn->set_charset("utf8mb4");
 
 $userName = $_POST['taikhoan'] ?? '';

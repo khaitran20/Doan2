@@ -51,7 +51,7 @@ public class TrangSuaTT extends AppCompatActivity {
                 .build();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://baigiuxe.elementfx.com/")
+                .baseUrl("https://doan2-qhh0.onrender.com/")
                 .client(okHttpClient) // Gắn client vào đây
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();

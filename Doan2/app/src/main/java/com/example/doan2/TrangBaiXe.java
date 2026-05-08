@@ -131,7 +131,7 @@ public class TrangBaiXe extends AppCompatActivity {
                 .build();
 
         api = new Retrofit.Builder()
-                .baseUrl("https://baigiuxe.elementfx.com/")
+                .baseUrl("https://doan2-qhh0.onrender.com/")
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()

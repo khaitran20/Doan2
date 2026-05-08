@@ -59,7 +59,7 @@ public class TrangTaiKhoan extends AppCompatActivity {
 
         // Bước 2: Khởi tạo Retrofit với client đã cấu hình
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://baigiuxe.elementfx.com/")
+                .baseUrl("https://doan2-qhh0.onrender.com/")
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();

@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
         // 2. Cấu hình Retrofit
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://baigiuxe.elementfx.com/")
+                .baseUrl("https://doan2-qhh0.onrender.com/")
                 .client(okHttpClient)
                 .addConverterFactory(ScalarsConverterFactory.create())
                 .build();

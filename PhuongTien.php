@@ -3,7 +3,7 @@ header('Content-Type: application/json; charset=utf-8');
 include "ketnoi.php";
 
 
-$conn = mysqli_connect($host, $user, $pass, $db);
+
 
 // Kiểm tra kết nối
 if ($conn->connect_error) {
