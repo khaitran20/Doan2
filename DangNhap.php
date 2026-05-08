@@ -1,31 +1,29 @@
 <?php
-header('Content-Type: application/json; charset=utf-8');
+// Bật hiển thị mọi lỗi của PHP để kiểm tra
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 include "ketnoi.php";
 
+$user_input = $_POST['taikhoan'] ?? '';
+$pass_input = $_POST['matkhau'] ?? '';
 
-
-mysqli_set_charset($conn, 'utf8');
-
-if (!$conn) {
-    echo json_encode(["status" => "error", "message" => "Không thể kết nối CSDL"]);
-    exit();
-}
-// Thay cho các dòng lấy $_POST cũ
-$data = json_decode(file_get_contents('php://input'), true);
-$user_input = $_POST['taikhoan'] ?? ($data['taikhoan'] ?? '');
-$pass_input = $_POST['matkhau'] ?? ($data['matkhau'] ?? '');
-if (empty($user_input) || empty($pass_input)) {
-    echo json_encode(["status" => "error", "message" => "Vui lòng nhập đủ thông tin"]);
-    exit();
+// Kiểm tra xem dữ liệu có lên đến PHP không
+if (empty($user_input)) {
+    die("Lỗi: PHP không nhận được biến 'taikhoan'. Hãy kiểm tra lại App.");
 }
 
-// 3. Truy vấn kiểm tra
 $sql = "SELECT * FROM taikhoan WHERE TenDangNhap = '$user_input' AND MatKhau = '$pass_input'";
 $result = mysqli_query($conn, $sql);
+
+if (!$result) {
+    // Nếu câu lệnh SQL bị lỗi (sai tên bảng, sai cột...)
+    die("Lỗi SQL: " . mysqli_error($conn));
+}
 
 if (mysqli_num_rows($result) > 0) {
     echo "1";
 } else {
-    echo "0";
+    echo "Lỗi: Sai tài khoản hoặc mật khẩu. Bạn vừa nhập: " . $user_input . " / " . $pass_input;
 }
 ?>
