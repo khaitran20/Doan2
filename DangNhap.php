@@ -10,11 +10,10 @@ if (!$conn) {
     echo json_encode(["status" => "error", "message" => "Không thể kết nối CSDL"]);
     exit();
 }
-
-// 2. Lấy dữ liệu từ App gửi lên
-$user_input = $_POST['taikhoan'] ?? '';
-$pass_input = $_POST['matkhau'] ?? '';
-
+// Thay cho các dòng lấy $_POST cũ
+$data = json_decode(file_get_contents('php://input'), true);
+$user_input = $_POST['taikhoan'] ?? ($data['taikhoan'] ?? '');
+$pass_input = $_POST['matkhau'] ?? ($data['matkhau'] ?? '');
 if (empty($user_input) || empty($pass_input)) {
     echo json_encode(["status" => "error", "message" => "Vui lòng nhập đủ thông tin"]);
     exit();
