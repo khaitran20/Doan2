@@ -2,7 +2,7 @@
 $host = 'gateway01.ap-southeast-1.prod.aws.tidbcloud.com';
 $port = '4000';
 $user = '3teo7ak1vNGCXsh.root';
-$pass = 'Ex4avdggPFWM0bWH'; // Mật khẩu trong ảnh của bạn
+$pass = '4jF8w08ARR0uREsg'; // Mật khẩu trong ảnh của bạn
 $dbname = 'test'; // Mặc định TiDB có sẵn db 'test', bạn nên dùng db này cho nhanh
 
 // Kết nối có thêm tham số Port
