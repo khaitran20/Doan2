@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/txtTitle_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="THÔNG BÁO"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtContent_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Nội dung thông báo"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/txtInstructions_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#F5F5F5"
+        android:padding="10dp"
+        android:text="Hướng dẫn đường đi"
+        android:textColor="#D32F2F"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/btnConfirm_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="XÁC NHẬN"
+        android:backgroundTint="#2E7D32"
+        android:textColor="#FFFFFF" />
+</LinearLayout>

@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.Doan2" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/xanhdam</item>
+        <item name="android:statusBarColor">@color/xanhdam</item>
+    </style>
+    <style name="ProfileInfoRow">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:padding">15dp</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="ProfileIcon">
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:layout_marginEnd">15dp</item>
+    </style>
+</resources>

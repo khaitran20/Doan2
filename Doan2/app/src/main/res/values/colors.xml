@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="trang">#FFFFFF</color>
+    <color name="nen_xam">#F0F2F5</color>
+
+    <color name="xanh_dam_chuyen_nghiep">#1A237E</color>
+    <color name="xanh_da_troi_nhe">#03A9F4</color>
+
+    <color name="chu_tieude">#2C3E50</color>
+    <color name="chu_phu">#7F8C8D</color>
+
+    <color name="vang_bach_kim">#E5E4E2</color>
+    <color name="xanhdam">#003366</color>
+    <color name="xanhnhat">#2196F3</color>
+    <color name="white">#FFFFFF</color>
+</resources>

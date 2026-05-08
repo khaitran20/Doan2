@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Doan2</string>
+    <string-array name="loai_xe_array">
+        <item>Xe máy</item>
+        <item>Xe đạp</item>
+        <item>Ô tô</item>
+    </string-array>
+</resources>
