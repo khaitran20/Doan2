@@ -1,15 +1,7 @@
 <?php
-// Ngăn hiển thị lỗi trực tiếp ra màn hình làm hỏng cấu trúc JSON
-error_reporting(0);
-ini_set('display_errors', 0);
+header('Content-Type: application/json; charset=utf-8');
+include "ketnoi.php";
 
-header("Content-Type: application/json; charset=UTF-8");
-
-// 1. Kết nối CSDL với thông tin từ x10Hosting
-$host = "localhost";
-$user = "lkzafhlb_qlbx"; 
-$pass = "SYfdz2WKSgrCxSGd78L";
-$db   = "lkzafhlb_qlbx";
 
 $conn = mysqli_connect($host, $user, $pass, $db);
 if ($conn->connect_error) {

@@ -1,12 +1,7 @@
 <?php
-// Ngăn các cảnh báo nhỏ làm hỏng định dạng JSON trả về
-error_reporting(0);
-header("Content-Type: application/json; charset=UTF-8");
-// 1. Kết nối CSDL với thông tin từ x10Hosting
-$host = "localhost";
-$user = "lkzafhlb_qlbx"; 
-$pass = "SYfdz2WKSgrCxSGd78L";
-$db   = "lkzafhlb_qlbx";
+header('Content-Type: application/json; charset=utf-8');
+include "ketnoi.php";
+
 
 $conn = mysqli_connect($host, $user, $pass, $db);
 

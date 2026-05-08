@@ -1,11 +1,7 @@
 <?php
-header('Content-Type: application/json');
+header('Content-Type: application/json; charset=utf-8');
+include "ketnoi.php";
 
-// 1. Kết nối CSDL với thông tin từ x10Hosting
-$host = "localhost";
-$user = "lkzafhlb_qlbx"; 
-$pass = "SYfdz2WKSgrCxSGd78L";
-$db   = "lkzafhlb_qlbx";
 
 $conn = mysqli_connect($host, $user, $pass, $db);
 mysqli_set_charset($conn, 'utf8');

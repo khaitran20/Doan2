@@ -1,12 +1,7 @@
 <?php
 ob_start(); // Thêm dòng này ở đầu file để tránh lỗi bộ đệm
 header('Content-Type: application/json; charset=utf-8');
-
-// 1. Kết nối CSDL với thông tin từ x10Hosting
-$host = "localhost";
-$user = "lkzafhlb_qlbx"; 
-$pass = "SYfdz2WKSgrCxSGd78L";
-$db   = "lkzafhlb_qlbx";
+include "ketnoi.php";
 
 $conn = mysqli_connect($host, $user, $pass, $db);
 mysqli_set_charset($conn, 'utf8');

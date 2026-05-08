@@ -1,5 +1,7 @@
 <?php
-include "ketnoi.php"; // Chứa mysqli_connect
+header('Content-Type: application/json; charset=utf-8');
+include "ketnoi.php";
+
 
 $bienSo = $_POST['BienSo'] ?? '';
 $loaiXe = $_POST['LoaiXe'] ?? '';
