@@ -5,20 +5,18 @@ $user = '3teo7ak1vNGCXsh.root';
 $pass = '4jF8w08ARR0uREsg';
 $dbname = 'test';
 
-// Khởi tạo đối tượng mysqli
 $conn = mysqli_init();
 
-// Cấu hình SSL (Bắt buộc đối với TiDB Cloud Serverless)
+// Cấu hình SSL là bắt buộc cho TiDB Cloud Serverless
 mysqli_ssl_set($conn, NULL, NULL, NULL, NULL, NULL);
 
-// Thực hiện kết nối
+// Thực hiện kết nối thực tế
 if (!mysqli_real_connect($conn, $host, $user, $pass, $dbname, $port, NULL, MYSQLI_CLIENT_SSL)) {
-    die("Kết nối thất bại: " . mysqli_connect_error());
+    // Chỉ trả về lỗi dưới dạng JSON nếu không kết nối được
+    header('Content-Type: application/json');
+    die(json_encode(["status" => "error", "message" => "Database connection failed"]));
 }
 
-// Thiết lập tiếng Việt
 mysqli_set_charset($conn, 'utf8');
-
-// Khi chạy thực tế trên App, bạn nên XÓA hoặc COMMENT dòng echo này lại
-// echo "Kết nối CSDL thành công!"; 
+// Tuyệt đối không echo bất kỳ dòng chữ nào ở đây
 ?>
