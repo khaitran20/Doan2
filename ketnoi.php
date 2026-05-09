@@ -18,5 +18,4 @@ if (!mysqli_real_connect($conn, $host, $user, $pass, $dbname, $port, NULL, MYSQL
 }
 
 mysqli_set_charset($conn, 'utf8');
-echo "Kết nối TiDB thành công!";
 ?>
