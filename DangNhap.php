@@ -1,30 +1,33 @@
 <?php
 header('Content-Type: application/json; charset=utf-8');
-include "ketnoi.php";
+include "ketnoi.php"; // File chứa thông số kết nối TiDB Cloud
 
-// Đọc dữ liệu gửi lên (hỗ trợ cả JSON và Form Data)
 $data = json_decode(file_get_contents('php://input'), true);
 $user_input = trim($_POST['taikhoan'] ?? ($data['taikhoan'] ?? ''));
 $pass_input = trim($_POST['matkhau'] ?? ($data['matkhau'] ?? ''));
 
+$response = array();
+
 if (empty($user_input) || empty($pass_input)) {
-    echo "0"; // Trả về 0 nếu thiếu thông tin
+    $response['success'] = 0;
+    $response['message'] = "Vui lòng nhập đủ thông tin";
+    echo json_encode($response);
     exit();
 }
 
-// Chống SQL Injection để bảo vệ bảng taikhoan
 $user_input = mysqli_real_escape_string($conn, $user_input);
 $pass_input = mysqli_real_escape_string($conn, $pass_input);
 
-// Truy vấn kiểm tra từ bảng taikhoan trong database test
 $sql = "SELECT * FROM taikhoan WHERE TenDangNhap = '$user_input' AND MatKhau = '$pass_input'";
 $result = mysqli_query($conn, $sql);
 
 if ($result && mysqli_num_rows($result) > 0) {
-    // Chỉ trả về 1 khi khớp hoàn toàn thông tin
-    echo "1"; 
+    $response['success'] = 1;
+    $response['message'] = "Đăng nhập thành công";
 } else {
-    echo "0";
+    $response['success'] = 0;
+    $response['message'] = "Tài khoản hoặc mật khẩu sai";
 }
-echo "Kết nối TiDB thành công!";
+
+echo json_encode($response);
 ?>
