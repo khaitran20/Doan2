@@ -2,7 +2,7 @@
 $host = 'gateway01.ap-southeast-1.prod.aws.tidbcloud.com';
 $port = '4000';
 $user = '3teo7ak1vNGCXsh.root';
-$pass = '4jF8w08ARR0uREsg';
+$pass = 'IkP13ElD2JZhPeKY';
 $dbname = 'test';
 
 $conn = mysqli_init();
