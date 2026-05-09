@@ -1,14 +1,15 @@
 FROM php:8.2-apache
 
-# Cập nhật và cài đặt các phụ thuộc hệ thống cần thiết
-RUN apt-get update && apt-get install -js -y \
-    libmysqli-dev \
+# Cập nhật hệ thống và cài đặt các thư viện cần thiết cho mysqli
+RUN apt-get update && apt-get install -y \
+    libmariadb-dev \
     && docker-php-ext-install mysqli \
     && docker-php-ext-enable mysqli
 
+# Copy toàn bộ mã nguồn vào thư mục web của server
 COPY . /var/www/html/
 
-# Phân quyền cho thư mục web (đảm bảo Apache có quyền đọc)
+# Cấp quyền cho Apache
 RUN chown -R www-data:www-data /var/www/html
 
 EXPOSE 80
